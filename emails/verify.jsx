@@ -1,5 +1,5 @@
 import {
-    Body,
+    Body, Button,
     Container,
     Head,
     Heading,
@@ -36,11 +36,15 @@ export const PlaidVerifyIdentityEmail = ({ validationCode = '144833' }) => (
                     </svg>
                 </Container>
                 <Text style={tertiary}>Verify Your Identity</Text>
-                <Heading style={secondary}>
-                    Enter the following code to finish email verification.
-                </Heading>
+                <Container style={{ padding: "10px" }}>
+                    <Heading style={secondary}>
+                        Click the button below to finish email verification.
+                    </Heading>
+                </Container>
                 <Section style={codeContainer}>
-                    <Text style={code}>{validationCode}</Text>
+                    <Button pX={12} pY={12} style={button} href={validationCode}>
+                        Get started
+                    </Button>
                 </Section>
                 <Text style={paragraph}>Not expecting this email?</Text>
                 <Text style={paragraph}>
@@ -74,8 +78,18 @@ const container = {
     padding: '68px 0 130px',
 };
 
-const logo = {
+const button = {
+    backgroundColor: '#5F51E8',
+    borderRadius: '12px',
+    color: '#fff',
+    fontSize: '16px',
+    textDecoration: 'none',
+    display: 'inline-block',
+    paddingBottom: '8px',
+    paddingTop: '8px',
     margin: '0 auto',
+    width: '100%',
+    textAlign: 'center',
 };
 
 const tertiary = {
